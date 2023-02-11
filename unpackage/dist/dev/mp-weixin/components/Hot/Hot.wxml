@@ -1,0 +1,1 @@
+<view class="hot data-v-43b54a60"><show-item vue-id="32f482a6-1" dataList="{{hotList}}" count="{{3}}" imgHeight="{{220}}" class="data-v-43b54a60" bind:__l="__l"></show-item></view>

@@ -1,0 +1,14 @@
+{
+  "component": true,
+  "usingComponents": {
+    "u-tabs": "/uni_modules/uview-ui/components/u-tabs/u-tabs",
+    "swiper-img": "/components/swiperImg/swiperImg",
+    "recommend": "/components/Recommend/Recommend",
+    "card": "/components/Card/Card",
+    "show-box": "/components/showBox/showBox",
+    "banner": "/components/Banner/Banner",
+    "brand": "/components/Brand/Brand",
+    "hot": "/components/Hot/Hot",
+    "shop-recommenda": "/components/ShopRecommenda/ShopRecommenda"
+  }
+}

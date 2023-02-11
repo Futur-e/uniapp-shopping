@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "show-item": "/components/showItem/showItem"
+  },
+  "component": true
+}

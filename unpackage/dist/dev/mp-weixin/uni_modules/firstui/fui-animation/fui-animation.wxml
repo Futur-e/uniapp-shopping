@@ -1,0 +1,1 @@
+<block wx:if="{{isShow}}"><view data-ref="fui_ani" data-event-opts="{{[['tap',[['change',['$event']]]]]}}" class="{{['fui-popup__animation','data-v-5231a113','vue-ref',ani.in]}}" style="{{('transform:'+transform+';'+stylesObject)}}" bindtap="__e"><slot></slot></view></block>

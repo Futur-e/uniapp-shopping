@@ -1,1 +1,1 @@
-<view class="content"><top-bar vue-id="8dd740cc-1" bind:__l="__l"></top-bar><top-scroll vue-id="8dd740cc-2" bind:__l="__l"></top-scroll></view>
+<view class="content"><top-bar bind:click="__e" vue-id="8dd740cc-1" data-event-opts="{{[['^click',[['toSearch']]]]}}" bind:__l="__l"></top-bar><top-scroll vue-id="8dd740cc-2" topList="{{topBarList}}" indexList="{{indexList}}" status="{{status}}" bind:__l="__l"></top-scroll><u-loadmore vue-id="8dd740cc-3" status="{{status}}" bind:__l="__l"></u-loadmore><tabbar vue-id="8dd740cc-4" cureentPage="index" bind:__l="__l"></tabbar></view>

@@ -1,232 +1,246 @@
 <template>
-  <view class="u-page">
-    <view class="u-demo-block">
-      <text class="u-demo-block__title">基础演示</text>
-      <view class="u-demo-block__content">
-        <u-tabs :list="list1" @click="click" :current="3">
-        </u-tabs>
+  <view class="center">
+    <view class="bg-img">
+      <image src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/17460/mybg.png" class="img"></image>
+      <view class="setting" @click="toSetting">
+        <image src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/17460/config.png"
+               class="set-img"></image>
+      </view>
+      <view class="avtor-box">
+        <image @click="toLogin" class="avtor" :src="userData.imgUrl"></image>
+        <text>{{ userData.userName }}</text>
       </view>
     </view>
-    <view
-        class="u-demo-block"
-        style="margin-bottom: 0;"
-    >
-      <text class="u-demo-block__title">粘性布局</text>
-    </view>
-    <u-sticky bgColor="#fff">
-      <u-tabs
-          :list="list1"
-      >
-      </u-tabs>
-    </u-sticky>
-    <u-gap
-        height="23"
-        bgColor="#fff"
-    ></u-gap>
-    <view class="u-demo-block">
-      <text class="u-demo-block__title">显示徽标</text>
-      <view class="u-demo-block__content">
-        <u-tabs :list="list2">
-        </u-tabs>
+    <!--    我的定展展示区-->
+    <view class="order-box">
+      <view class="top-text">
+        <text style="font-size:34rpx;font-weight: bold ">我的订单</text>
+        <text style="color: #8f8f94" @click="toOrder">全部订单&gt;</text>
+      </view>
+      <view class="bottom-icons">
+        <view class="icon-box">
+          <image src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/17460/order1.png"
+                 class="botton-img"></image>
+          <text>待付款</text>
+        </view>
+        <view class="icon-box">
+          <image src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/17460/order3.png"
+                 class="botton-img"></image>
+          <text>待发货</text>
+        </view>
+        <view class="icon-box">
+          <image src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/17460/order2.png"
+                 class="botton-img"></image>
+          <text>待收货</text>
+        </view>
+        <view class="icon-box">
+          <image src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/17460/order4.png"
+                 class="botton-img"></image>
+          <text>待评价</text>
+        </view>
+        <view class="icon-box">
+          <image src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/17460/order1.png"
+                 class="botton-img"></image>
+          <text>待付款</text>
+        </view>
       </view>
     </view>
-    <view class="u-demo-block">
-      <text class="u-demo-block__title">禁止滚动</text>
-      <view class="u-demo-block__content">
-        <u-tabs :list="list6" :scrollable="false">
-        </u-tabs>
+
+    <view class="container">
+      <view class="list">
+        <view class="list-item">
+          <text>我的收藏</text>
+          <text>></text>
+        </view>
+        <view class="list-item">
+          <text>我的优惠券</text>
+          <text>></text>
+        </view>
+        <view class="list-item">
+          <text>我的积分</text>
+          <text>></text>
+        </view>
+        <view class="list-item">
+          <text>加入超级VIP</text>
+          <text>></text>
+        </view>
+        <view class="list-item">
+          <text>帮助中心</text>
+          <text>></text>
+        </view>
+        <view class="list-item">
+          <text>联系客服</text>
+          <text>></text>
+        </view>
+        <view class="list-item">
+          <text>商家入驻</text>
+          <text>></text>
+        </view>
       </view>
     </view>
-    <view class="u-demo-block">
-      <text class="u-demo-block__title">禁用菜单</text>
-      <view class="u-demo-block__content">
-        <u-tabs :list="list3">
-        </u-tabs>
-      </view>
-    </view>
-    <view class="u-demo-block">
-      <text class="u-demo-block__title">自定义样式</text>
-      <view class="u-demo-block__content">
-        <u-tabs
-            :list="list4"
-            lineWidth="30"
-            lineColor="#f56c6c"
-            :activeStyle="{
-						color: '#303133',
-						fontWeight: 'bold',
-						transform: 'scale(1.05)'
-					}"
-            :inactiveStyle="{
-						color: '#606266',
-						transform: 'scale(1)'
-					}"
-            itemStyle="padding-left: 15px; padding-right: 15px; height: 34px;"
-        >
-        </u-tabs>
-      </view>
-    </view>
-    <view class="u-demo-block">
-      <text class="u-demo-block__title">滑块设置背景图</text>
-      <view class="u-demo-block__content">
-        <u-tabs
-            :list="list4"
-            lineWidth="20"
-            lineHeight="7"
-            :lineColor="`url(${lineBg}) 100% 100%`"
-            :activeStyle="{
-						color: '#303133',
-						fontWeight: 'bold',
-						transform: 'scale(1.05)'
-					}"
-            :inactiveStyle="{
-						color: '#606266',
-						transform: 'scale(1)'
-					}"
-            itemStyle="padding-left: 15px; padding-right: 15px; height: 34px;"
-        >
-        </u-tabs>
-      </view>
-    </view>
-    <view class="u-demo-block">
-      <text class="u-demo-block__title">右侧自定义插槽</text>
-      <view class="u-demo-block__content">
-        <u-tabs :list="list1">
-          <view
-              slot="right"
-              style="padding-left: 4px;"
-              @tap="$u.toast('插槽被点击')"
-          >
-            <u-icon
-                name="list"
-                size="21"
-                bold
-            ></u-icon>
-          </view>
-        </u-tabs>
-      </view>
-    </view>
+    <Tabbar cureentPage="center"></Tabbar>
   </view>
 </template>
 
 <script>
-const lineBg = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAOCAYAAABdC15GAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFxSURBVHgBzZNRTsJAEIb/WTW+lpiY+FZPIDew3ABP4GJ8hxsI9zBpOYHeQDwBPQI+mRiRvpLojtPdYhCorQqF/6GdbGd2vvwzBXZcNAt4oj1ANeUoAT5iqkUjbEFLHNmhD1YPEvpZ3ghkGlVDCkc94/BmHMq998I5ONiY1ZBfpKAyuOtgAc5yOEDmYEWNh32BHF91sGHZHmwW4azciN9aQwnz3SJEgOmte+R2tdLprTYoa50mvuomlLpD4Y3oQZnov6D2RzCqI93bWOHaEmAGqQUyRBlZR1WfarcD/EJ2z8DtzDGvsMCwpm8XOCfDUsVOCYhiqRxI/CTQo4UOvjzO7Pow18vfywneuUHHUUxLn55lLw5JFpZ8bEUcY8oXdOLWiHLTxvoGpLqoUmy6dBT15o/ox3znpoycAmxUsiJTbs1cmxeVKp+0zmFIS7bGWiVghC7Vwse8jFKAX9eljh4ggKLLv7uaQvG9/F59Oo2SouxPu7OTCxN/s8wAAAAASUVORK5CYII=";
-export default {
-  mixins: [uni.$u.mixin],
-  data() {
-    return {
-      lineBg,
-      list1: [{
-        name: '关注',
-      }, {
-        name: '推荐',
-      }, {
-        name: '电影'
-      }, {
-        name: '科技'
-      }, {
-        name: '音乐'
-      }, {
-        name: '美食'
-      }, {
-        name: '文化'
-      }, {
-        name: '财经'
-      }, {
-        name: '手工'
-      }],
-      list2: [{
-        name: '关注'
-      }, {
-        name: '推荐',
-        badge: {
-          isDot: true
-        }
-      }, {
-        name: '电影',
-        badge: {
-          value: 5,
-        }
-      }, {
-        name: '科技'
-      }, {
-        name: '音乐'
-      }, {
-        name: '美食'
-      }, {
-        name: '文化'
-      }, {
-        name: '财经'
-      }, {
-        name: '手工'
-      }],
-      list3: [{
-        name: '关注'
-      }, {
-        name: '推荐',
-      }, {
-        name: '电影',
-        disabled: true
-      }, {
-        name: '科技'
-      }, {
-        name: '音乐'
-      }, {
-        name: '美食'
-      }, {
-        name: '文化'
-      }, {
-        name: '财经'
-      }, {
-        name: '手工'
-      }],
-      list4: [{
-        name: '关注'
-      }, {
-        name: '推荐',
-        badge: {
-          isDot: true
-        }
-      }, {
-        name: '电影',
-      }, {
-        name: '科技'
-      }, {
-        name: '音乐'
-      }, {
-        name: '美食'
-      }, {
-        name: '文化'
-      }, {
-        name: '财经'
-      }, {
-        name: '手工'
-      }],
-      list6: [
-        {
-          name: '关注'
-        }, {
-          name: '推荐',
-        }, {
-          name: '电影',
-        }, {
-          name: '科技'
-        }
-      ]
-    }
-  },
-  onLoad() {
+import {mapState} from "vuex";
 
+export default {
+  computed: {
+    ...mapState({
+      userData: state => state.userData.userData,
+      loginStatus: state => state.userData.loginStatus
+    })
   },
   methods: {
-    click(item) {
-      console.log('item', item);
+    toSetting() {
+      uni.navigateTo({
+        url: "/pagesA/setting/setting"
+      })
+    },
+    toOrder() {
+      uni.navigateTo({
+        url: "/pagesA/order/order"
+      })
+    },
+    toLogin() {
+      if (!this.loginStatus) {
+        uni.navigateTo({
+          url: "/pagesA/LoginPage/LoginPage"
+        })
+      } else {
+        uni.navigateTo({
+          url: "/pagesA/setting/setting"
+        })
+      }
     }
   }
 }
 </script>
 
-<style lang="scss">
-.u-page {
-  padding-bottom: 500px;
+<style scoped lang="scss">
+.center {
+  .bg-img {
+    width: 100%;
+    height: 480rpx;
+    overflow: hidden;
+    position: relative;
+
+    .img {
+      width: 100%;
+      position: absolute;
+    }
+
+    .setting {
+      position: absolute;
+      z-index: 20;
+      width: 60rpx;
+      height: 60rpx;
+      top: 80px;
+      right: 40rpx;
+
+      .set-img {
+        width: 60rpx;
+        height: 60rpx;
+      }
+    }
+
+    .avtor-box {
+      text-align: center;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      z-index: 20;
+      left: 35%;
+      top: 150rpx;
+
+      .avtor {
+        width: 200rpx;
+        height: 200rpx;
+        border-radius: 50%;
+      }
+
+      text {
+        font-size: 36rpx;
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  .order-box {
+    display: flex;
+    flex-direction: column;
+    padding: 20rpx 30rpx;
+    height: auto;
+
+    .top-text {
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    .bottom-icons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40rpx;
+
+      .icon-box {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .botton-img {
+          width: 60rpx;
+          height: 60rpx;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  background: #F8F8F8;
+}
+
+.list {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  margin-top: 30upx;
+  border-radius: 6upx;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  padding-right: 30upx;
+  padding-left: 30upx;
+  box-shadow: 0 0 25upx rgba(0, 0, 0, 0.15);
+}
+
+.list-item {
+  height: 75upx;
+  line-height: 75upx;
+  border-bottom: 1upx solid #EAEAEA;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.list-item text:first-child {
+  font-size: 30upx;
+  color: #333;
+}
+
+.list-item text:last-child {
+  font-size: 30upx;
+  color: #999;
 }
 </style>
+

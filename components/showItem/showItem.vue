@@ -1,9 +1,10 @@
 <template>
-  <view class="commodity" :style="'flex-wrap:' +wrap+';'">
+  <view class="commodity" :style="'flex-wrap:' +iswrap+';'">
     <view class="commodity-item"
           v-for="(item,index) in dataList"
           :key="item.id"
           :style="'width:'+width+'rpx;'"
+          @click="toDetails(item.id)"
     >
       <image :src="item.imgUrl" class="commodity-img" :style="'height:'+imgHeight+'rpx;'"></image>
       <view class="commodity-content">
@@ -24,7 +25,7 @@ export default {
   props: {
     dataList: {
       type: Array,
-      default: () => ([])
+      default: () => {[]}
     },
     count: {
       type: Number,
@@ -34,9 +35,9 @@ export default {
       type:Number,
       default:375
     },
-    wrap:{
+    iswrap:{
       type:String,
-      default:'wrap'
+      default:"wrap"
     },
 
   },
@@ -44,6 +45,13 @@ export default {
     width(props) {
       return 720 / props.count
     },
+  },
+  methods:{
+    toDetails(index){
+      uni.navigateTo({
+        url:`/pagesA/shopDetails/shopDetails?id=${index}`
+      })
+    }
   }
 }
 </script>
@@ -53,7 +61,7 @@ export default {
 .commodity {
   display: flex;
 
-  justify-content: space-around;
+  justify-content: left;
 
   .commodity-item {
     padding-bottom: 20rpx;

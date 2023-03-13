@@ -1,6 +1,10 @@
 {
   "easycom": {
-    "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+    "^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue",
+    "autoscan": true,
+    "custom": {
+      "fui-(.*)": "@/components/firstui/fui-$1/fui-$1.vue"
+    }
   },
   "pages": [
     //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
@@ -14,23 +18,117 @@
     {
       "path": "pages/sort/sort",
       "style": {
-        "navigationBarTitleText": "",
+        "navigationBarTitleText": "商品分类",
         "enablePullDownRefresh": false
       }
     },
     {
       "path": "pages/shopCar/shopCar",
       "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
+        "navigationBarTitleText": "购物车",
+        "enablePullDownRefresh": false,
+        "navigationStyle": "custom"
       }
     },
     {
       "path": "pages/center/center",
       "style": {
-        "navigationBarTitleText": "",
-        "enablePullDownRefresh": false
+        "navigationBarTitleText": "个人中心",
+        "enablePullDownRefresh": false,
+        "navigationStyle": "custom"
       }
+    }
+  ],
+  "subPackages": [
+    {
+      "root": "pagesA",
+      "pages": [
+        {
+          "path": "search/search",
+          "style": {
+            "navigationBarTitleText": "搜索内容",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "searchResult/searchResult",
+          "style": {
+            "navigationBarTitleText": "搜索结果",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "shopDetails/shopDetails",
+          "style": {
+            "navigationBarTitleText": "商品详情页",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "setting/setting",
+          "style": {
+            "navigationBarTitleText": "设置",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "receivingAddress/receivingAddress",
+          "style": {
+            "navigationBarTitleText": "地址管理",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "addAddress/addAddress",
+          "style": {
+            "navigationBarTitleText": "添加收货地址",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "order/order",
+          "style": {
+            "navigationBarTitleText": "我的订单",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "comfirmOrder/comfirmOrder",
+          "style": {
+            "navigationBarTitleText": "确认订单",
+            "enablePullDownRefresh": false,
+            "backgroundColor": "#F7F7F7"
+          }
+        },
+        {
+          "path": "confirmPay/confirmPay",
+          "style": {
+            "navigationBarTitleText": "确认支付",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "paySuccess/paySuccess",
+          "style": {
+            "navigationBarTitleText": "支付成功",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "LoginPage/LoginPage",
+          "style": {
+            "navigationBarTitleText": "用户登录",
+            "enablePullDownRefresh": false
+          }
+        },
+        {
+          "path": "LoginCode/LoginCode",
+          "style": {
+            "navigationBarTitleText": "获取验证码",
+            "enablePullDownRefresh": false
+          }
+        }
+      ]
     }
   ],
   "globalStyle": {
@@ -39,7 +137,14 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
-  "tabBar": {
+  "uniIdRouter": {
+    "loginPage": "pagesA/LoginPage/LoginPage", // 登录页面路径
+    "needLogin": [
+      "pages/shopCar/shopCar" // 需要登录才可访问的页面列表，可以使用正则语法
+    ],
+    "resToLogin": true // 自动解析云对象及clientDB的错误码，如果是客户端token不正确或token过期则自动跳转配置的登录页面，配置为false则关闭此行为，默认true
+  }
+  /*"tabBar": {
     "color": "#636263",
     "selectedColor": "#636263",
     "list": [
@@ -68,5 +173,5 @@
         "selectedIconPath": "static/tabbar/mySelected.png"
       }
     ]
-  }
+  }*/
 }

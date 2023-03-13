@@ -1,37 +1,9 @@
 <template>
 
 <view class="brand">
-  <view class="brand-item">
-    <image class="brand-img" src="../../static/img/icons1.png"></image>
-    <text class="f-color">运动户外</text>
-  </view>
-  <view class="brand-item">
-    <image class="brand-img" src="../../static/img/icons1.png"></image>
-    <text class="f-color">运动户外</text>
-  </view>
-  <view class="brand-item">
-    <image class="brand-img" src="../../static/img/icons1.png"></image>
-    <text class="f-color">运动户外</text>
-  </view>
-  <view class="brand-item">
-    <image class="brand-img" src="../../static/img/icons1.png"></image>
-    <text class="f-color">运动户外</text>
-  </view>
-  <view class="brand-item">
-    <image class="brand-img" src="../../static/img/icons1.png"></image>
-    <text class="f-color">运动户外</text>
-  </view>
-  <view class="brand-item">
-    <image class="brand-img" src="../../static/img/icons1.png"></image>
-    <text class="f-color">运动户外</text>
-  </view>
-  <view class="brand-item">
-    <image class="brand-img" src="../../static/img/icons1.png"></image>
-    <text class="f-color">运动户外</text>
-  </view>
-  <view class="brand-item">
-    <image class="brand-img" src="../../static/img/icons1.png"></image>
-    <text class="f-color">运动户外</text>
+  <view class="brand-item" v-for="(item,index) in brand" :key="index">
+    <image class="brand-img" :src="item.imgUrl"></image>
+    <text class="f-color">{{item.name}}</text>
   </view>
 
 </view>
@@ -39,7 +11,14 @@
 
 <script>
 export default {
-  name: "Brand"
+  props:{
+    brand:{
+      type:Array,
+      default:()=>{[]}
+    }
+
+  }
+
 }
 </script>
 

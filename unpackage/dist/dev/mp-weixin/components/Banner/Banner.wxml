@@ -1,1 +1,1 @@
-<view class="banner data-v-29f582c4"><image class="banner-img data-v-29f582c4" src="../../static/img/banner1.jpg"></image></view>
+<view class="banner data-v-29f582c4"><image class="banner-img data-v-29f582c4" src="{{bannerImg}}"></image></view>

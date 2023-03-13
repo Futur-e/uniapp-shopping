@@ -33,7 +33,7 @@
   height: 6px;
   width: 6px;
   border-radius: 100px;
-  background-color: white;
+  background-color: #8d8d8d;
   margin: 0 5px;
   transition: background-color 0.3s;
 }
@@ -50,7 +50,7 @@
   justify-content: center;
 }
 .indicator-num__text.data-v-4e7bf4dc {
-  color: #FFFFFF;
+  color: #8a8a8a;
   font-size: 12px;
 }
 

@@ -156,7 +156,7 @@
 
 			&__left {
 				left: 0;
-				
+
 				&--hover {
 					opacity: 0.7;
 				}

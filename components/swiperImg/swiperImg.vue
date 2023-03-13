@@ -1,6 +1,7 @@
 <template>
   <u-swiper
-      :list="list"
+      :height=height
+      :list="swiperList"
       @change="e => current = e.current"
       :autoplay="false"
   >
@@ -10,7 +11,7 @@
     >
       <view
           class="indicator__dot"
-          v-for="(item, index) in list"
+          v-for="(item, index) in swiperList"
           :key="index"
           :class="[index === current && 'indicator__dot--active']"
       >
@@ -22,14 +23,19 @@
 <script>
 
 export default {
+  props:{
+    swiperList:{
+      type:Array,
+      default:()=>(['../../static/img/Furnishing1.jpg'])
+    },
+    height:{
+      type:Number
+    }
+  },
   data() {
     return {
       current:0,
-      list: [
-        '../../../../static/img/swiper1.jpg',
-        '../../../../static/img/swiper2.jpg',
-        '../../../../static/img/swiper3.jpg',
-      ],
+
     }
   },
   methods: {
@@ -52,7 +58,7 @@ export default {
     height: 6px;
     width: 6px;
     border-radius: 100px;
-    background-color: white;
+    background-color: #8d8d8d;
     margin: 0 5px;
     transition: background-color 0.3s;
 
@@ -71,7 +77,7 @@ export default {
   justify-content: center;
 
   &__text {
-    color: #FFFFFF;
+    color: #8a8a8a;
     font-size: 12px;
   }
 }

@@ -26,7 +26,7 @@
 /* 文章场景相关 */
 .commodity.data-v-cea61ff8 {
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
 }
 .commodity .commodity-item.data-v-cea61ff8 {
   padding-bottom: 20rpx;

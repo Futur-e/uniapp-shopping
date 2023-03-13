@@ -1,0 +1,1 @@
+<view class="pay-success data-v-41b18f0b"><view class="icon-box data-v-41b18f0b"><u-icon vue-id="16fe594a-1" name="checkmark-circle" size="160" color="#1aa034" class="data-v-41b18f0b" bind:__l="__l"></u-icon></view><text class="success data-v-41b18f0b">支付成功</text></view>

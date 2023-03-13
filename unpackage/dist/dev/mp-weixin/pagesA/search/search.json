@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "搜索内容",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-search": "/uni_modules/uview-ui/components/u-search/u-search",
+    "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
+    "fui-tag": "/uni_modules/firstui/fui-tag/fui-tag"
+  }
+}

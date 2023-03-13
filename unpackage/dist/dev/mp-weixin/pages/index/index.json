@@ -3,6 +3,9 @@
   "navigationStyle": "custom",
   "usingComponents": {
     "top-bar": "/components/topBar/topBar",
-    "top-scroll": "/components/topScroll/topScroll"
+    "top-scroll": "/components/topScroll/topScroll",
+    "u-loadmore": "/uni_modules/uview-ui/components/u-loadmore/u-loadmore",
+    "tabbar": "/components/Tabbar/Tabbar",
+    "u-sticky": "/uni_modules/uview-ui/components/u-sticky/u-sticky"
   }
 }

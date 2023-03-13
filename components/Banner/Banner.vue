@@ -1,12 +1,17 @@
 <template>
 <view class="banner">
-  <image src="../../static/img/banner1.jpg" class="banner-img"></image>
+  <image :src="bannerImg" class="banner-img"></image>
 </view>
 </template>
 
 <script>
 export default {
-  name: "Banner"
+  props:{
+    bannerImg:{
+      type:String,
+      default:""
+    }
+  }
 }
 </script>
 

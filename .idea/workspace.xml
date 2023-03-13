@@ -15,12 +15,14 @@
       <list>
         <option value="CSS File" />
         <option value="Uniapp Vue Page" />
+        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -31,31 +33,37 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/project/uniapp-shopping/uni_modules/uview-ui/components",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/project/uniapp-shopping/uni_modules&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\project\uniapp-shopping\uni_modules\uview-ui\components" />
+      <recent name="D:\project\uniapp-shopping\uni_modules" />
+      <recent name="D:\project\uniapp-shopping\uni_modules\uview-ui" />
+      <recent name="D:\project\uniapp-shopping\uni_modules\uview-ui\libs\util" />
       <recent name="D:\project\uniapp-shopping" />
+      <recent name="D:\project\uniapp-shopping\uni_modules\uview-ui\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\project\uniapp-shopping\components" />
+      <recent name="D:\project\uniapp-shopping\uni_modules" />
+      <recent name="D:\project\uniapp-shopping\store" />
       <recent name="D:\project\uniapp-shopping" />
+      <recent name="D:\project\uniapp-shopping\components" />
       <recent name="D:\project\uniapp-shopping\components\swiperImg" />
-      <recent name="D:\project\uniapp-shopping\common" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -68,6 +76,13 @@
       <updated>1675997154732</updated>
       <workItem from="1675997156165" duration="9903000" />
       <workItem from="1676017090250" duration="39935000" />
+      <workItem from="1676176065707" duration="112788000" />
+      <workItem from="1676517072936" duration="32614000" />
+      <workItem from="1676685251234" duration="21000" />
+      <workItem from="1676685290102" duration="90534000" />
+      <workItem from="1677414394553" duration="7501000" />
+      <workItem from="1677645116048" duration="375000" />
+      <workItem from="1677828110202" duration="21000" />
     </task>
     <servers />
   </component>

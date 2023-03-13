@@ -1,5 +1,11 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "购物车",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "u-navbar": "/uni_modules/uview-ui/components/u-navbar/u-navbar",
+    "u-number-box": "/uni_modules/uview-ui/components/u-number-box/u-number-box",
+    "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
+    "tabbar": "/components/Tabbar/Tabbar"
+  }
 }

@@ -301,7 +301,9 @@
 	@import "../../libs/css/components.scss";
 
 	.u-tabs {
-
+position: fixed;
+    background-color: #FFFFFF;
+    z-index: 999;
 		&__wrapper {
 			@include flex;
 			align-items: center;
@@ -357,4 +359,5 @@
 			}
 		}
 	}
+
 </style>

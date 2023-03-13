@@ -1,11 +1,11 @@
 <template>
   <view class="recommend bg-color">
-    <view class="recommend-item">
-      <img src="../../static/img/Children.jpg" alt="" class="item-big">
+    <view class="recommend-item" v-for="(item,index) in recommendList" :key="index">
+      <img :src="item.bigUrl" alt="" class="item-big">
       <view class="item-small">
-        <image class="item-img" src="../../static/img/Children1.jpg"></image>
-        <image class="item-img" src="../../static/img/Children2.jpg"></image>
-        <image class="item-img" src="../../static/img/Children3.jpg"></image>
+        <block v-for="(list,index) in item.smallImg">
+          <image class="item-img" :src="list"></image>
+        </block>
       </view>
     </view>
   </view>
@@ -13,7 +13,27 @@
 
 <script>
 export default {
-  name: "Recommend"
+  props:{
+    recommendList:{
+      type:Array,
+      default:()=>([
+        {
+          "bigUrl": "../../static/img/Children.jpg",
+          "smallImg": [
+            {
+              "imgUrl": "../../static/img/Children1.jpg"
+            },
+            {
+              "imgUrl": "../../static/img/Children2.jpg"
+            },
+            {
+              "imgUrl": "../../static/img/Children3.jpg"
+            }
+          ]
+        }
+      ])
+    }
+  }
 }
 </script>
 

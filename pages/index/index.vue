@@ -1,42 +1,68 @@
 <template>
-	<view class="content">
-    <topBar></topBar>
-    <topScroll></topScroll>
-<!--    推荐魔板-->
-<!--    <swiperImg></swiperImg>
-    <Recommend></Recommend>
-    <Card cardTitle="猜你喜欢"></Card>
-    <showBox></showBox>
-    <Card cardTitle="商品列表"></Card>
-    <showBox></showBox>-->
+  <view class="content">
 
-<!--    其他模板-->
-<!--    <Banner></Banner>
-    <Brand></Brand>
-    <Card cardTitle="热销爆品"></Card>
-    <Hot></Hot>
-    <Card cardTitle="推荐店铺"></Card>
-    <ShopRecommenda></ShopRecommenda>
-    <Card cardTitle="为您推荐"></Card>
-    <showBox></showBox>-->
-
-	</view>
+    <topBar @click="toSearch"></topBar>
+    <topScroll :topList="topBarList" :indexList="indexList" :status="status"></topScroll>
+    <u-loadmore :status="status"/>
+    <Tabbar cureentPage="index"></Tabbar>
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+import USticky from "@/uni_modules/uview-ui/components/u-sticky/u-sticky.vue";
+import $http from "@/common/api/request";
 
-		},
-		methods: {
-
-		}
-	}
+export default {
+  components: {USticky},
+  data() {
+    return {
+      topBarList: [],
+      indexList: [],
+      status: 'loadmore',
+      page: 0
+    }
+  },
+  onLoad() {
+    $http.request({
+      url: "/index_list/data"
+    }).then((res) => {
+      console.log(res)
+      this.topBarList = res.result.topBar
+      this.indexList = res.result.indexList
+    }).catch(() => {
+      uni.showToast({
+        title: "请求失败，请重试",
+        icon: 'none'
+      })
+    })/*
+     uni.request({
+       url:"http://192.168.1.2:3000/api/index_list/data",
+       success:({data})=>{
+         this.topBarList=data.result.topBar
+         this.indexList = data.result.indexList
+       }
+     })*/
+  },
+  methods: {
+    // 触底回调
+    onReachBottom() {
+      if (this.page >= 3) return;
+      this.status = 'loading';
+      this.page = ++this.page;
+      console.log("加载完成")
+      setTimeout(() => {
+        if (this.page >= 3) this.status = 'nomore';
+        else
+          this.status = 'loading';
+      }, 2000)
+    },
+    toSearch() {
+      uni.navigateTo({
+        url: '/pagesA/search/search'
+      })
+    }
+  }
+}
 </script>
 
 <style>

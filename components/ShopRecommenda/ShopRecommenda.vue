@@ -1,14 +1,14 @@
 <template>
   <view class="shop">
-    <view class="shop-item">
+    <view class="shop-item" v-for="(item,index) in shopList" :key="index">
         <view class="img-big">
-          <image src="../../static/img/shop.jpg" class="img-big"></image>
+          <image :src="item.bigUrl" class="img-big"></image>
         </view>
       <scroll-view scroll-x="true" class="scroll-content">
-        <view class="scroll-item">
+        <view>
           <showItem
-              :dataList="shopList"
-              :wrap="nowrap"
+              :dataList="item.shopList"
+              :iswrap="nowrap"
               :count=4
               :imgHeight=200
           ></showItem>
@@ -21,58 +21,14 @@
 
 <script>
 export default {
+  props:{
+    shopList: {
+      type:Array,
+      default:()=>{[]}
+    }
+  },
   data(){
     return{
-      shopList:[
-        {
-          id:1,
-          imgUrl:'../../static/img/shop1.jpg',
-          name:'大姨绒毛大款2020年必须买，不买你就不行了，疯抢',
-          pprice:'222',
-          oprice:'111',
-          discount:5.1
-        },
-        {
-          id:2,
-          imgUrl:'../../static/img/shop2.jpg',
-          name:'大姨绒毛大款2020年必须买，不买你就不行了，疯抢',
-          pprice:'222',
-          oprice:'111',
-          discount:5.1
-        },
-        {
-          id:3,
-          imgUrl:'../../static/img/hot3.jpg',
-          name:'大姨绒毛大款2020年必须买，不买你就不行了，疯抢',
-          pprice:'222',
-          oprice:'111',
-          discount:5.1
-        },
-        {
-          id:4,
-          imgUrl:'../../static/img/hot2.jpg',
-          name:'大姨绒毛大款2020年必须买，不买你就不行了，疯抢',
-          pprice:'222',
-          oprice:'111',
-          discount:5.1
-        },
-        {
-          id:5,
-          imgUrl:'../../static/img/hot3.jpg',
-          name:'大姨绒毛大款2020年必须买，不买你就不行了，疯抢',
-          pprice:'222',
-          oprice:'111',
-          discount:5.1
-        },
-        {
-          id:6,
-          imgUrl:'../../static/img/hot1.jpg',
-          name:'大姨绒毛大款2020年必须买，不买你就不行了，疯抢',
-          pprice:'222',
-          oprice:'111',
-          discount:5.1
-        }
-      ]
 
     }
   }

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "搜索结果",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-search": "/uni_modules/uview-ui/components/u-search/u-search",
+    "shop-list": "/components/shopList/shopList"
+  }
+}

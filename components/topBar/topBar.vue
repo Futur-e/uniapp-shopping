@@ -1,8 +1,10 @@
 <template>
-  <view class="search" :style="{'padding-top': barHeight +  'px'}" @click="$emit('click')">
-    <view class="search-box">
-      <u-icon name="search" size="18" color="#ccc"></u-icon>
-      <text>搜索社区内容</text>
+  <view :style="{'height': allBarHright + 'px'}" style="z-index: 999">
+    <view class="search" :style="{'padding-top': barHeight +  'px'}" @click="$emit('click')">
+      <view class="search-box" id="searchbox">
+        <u-icon name="search" size="18" color="#ccc"></u-icon>
+        <text>搜索社区内容</text>
+      </view>
     </view>
   </view>
 </template>
@@ -14,11 +16,20 @@ export default {
 
   data() {
     return {
-      barHeight: 0
+      barHeight: 0,
+      allBarHright:0
     }
   },
   beforeMount() {
     this.getNavBarHeight()
+  },
+  mounted() {
+    const query = uni.createSelectorQuery().in(this);
+    query.select('#searchbox').boundingClientRect(data => {
+      this.allBarHright = this.barHeight + data.height
+      console.log(this.allBarHright)
+    }).exec();
+
   },
   methods: {
     getNavBarHeight() {
@@ -42,7 +53,7 @@ export default {
 
 <style lang="scss" scoped>
 .search {
-  position: relative;
+  position: fixed;
   width: 100%;
   background: #fff;
   padding: 0 31rpx 12rpx;

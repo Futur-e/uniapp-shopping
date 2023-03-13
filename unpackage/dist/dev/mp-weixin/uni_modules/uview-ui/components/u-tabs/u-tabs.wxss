@@ -33,6 +33,11 @@ view.data-v-48634e29, scroll-view.data-v-48634e29, swiper-item.data-v-48634e29 {
   align-items: stretch;
   align-content: flex-start;
 }
+.u-tabs.data-v-48634e29 {
+  position: fixed;
+  background-color: #FFFFFF;
+  z-index: 999;
+}
 .u-tabs__wrapper.data-v-48634e29 {
   display: flex;
   flex-direction: row;

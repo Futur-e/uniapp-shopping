@@ -64,7 +64,7 @@
 	 * @property {Boolean | String}	disabled	不可用（默认 false ）
 	 * @property {String}			size		标签的大小，large，medium，mini （默认 'medium' ）
 	 * @property {String}			shape		tag的形状，circle（两边半圆形）, square（方形，带圆角）（默认 'square' ）
-	 * @property {String | Number}	text		标签的文字内容 
+	 * @property {String | Number}	text		标签的文字内容
 	 * @property {String}			bgColor		背景颜色，默认为空字符串，即不处理
 	 * @property {String}			color		标签字体颜色，默认为空字符串，即不处理
 	 * @property {String}			borderColor	镂空形式标签的边框颜色
@@ -76,7 +76,7 @@
 	 * @property {Boolean}			show		标签显示与否（默认 true ）
 	 * @property {String}			icon		内置图标，或绝对路径的图片
 	 * @event {Function(index)} click 点击标签时触发 index: 传递的index参数值
-	 * @event {Function(index)} close closable为true时，点击标签关闭按钮触发 index: 传递的index参数值	
+	 * @event {Function(index)} close closable为true时，点击标签关闭按钮触发 index: 传递的index参数值
 	 * @example <u-tag text="标签" type="error" plain plainFill></u-tag>
 	 */
 	export default {

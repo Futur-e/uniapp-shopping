@@ -1,0 +1,29 @@
+
+.tabbar.data-v-1c2a4684 {
+  border-top: 2rpx solid #636263;
+  background-color: #FFFFFF;
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.tab.data-v-1c2a4684 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+image.data-v-1c2a4684 {
+  width: 55rpx;
+  height: 55rpx;
+}
+.text.data-v-1c2a4684 {
+  padding: 10rpx 0;
+  font-size: 24rpx;
+}
+

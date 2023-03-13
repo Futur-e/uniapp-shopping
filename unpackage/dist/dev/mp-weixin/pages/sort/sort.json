@@ -1,5 +1,7 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "商品分类",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "tabbar": "/components/Tabbar/Tabbar"
+  }
 }

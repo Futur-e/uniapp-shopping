@@ -168,6 +168,7 @@
 			custom() {
 				this.$emit('custom', this.keyword);
 				try {
+
 					// 收起键盘
 					uni.hideKeyboard();
 				} catch (e) {}
